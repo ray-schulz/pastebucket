@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>paste bucket</title>
+<script>
+function ctrl_enter(e) {
+	if (e.keyCode == 13 && e.ctrlKey) {
+		document.getElementById("paste_button").click();
+	}
+	//alert(e.keyCode);
+}
+</script>
+</head>
+<body style="text-align: center;">
+<p>You can use the form below to submit, or you may use curl:</p>
+<pre>&lt;command&gt; | curl -F 'paste=&lt;-' {{ url }}</pre>
+<form action="/" method="post">
+<p><textarea autofocus name="text" rows="32" cols="120" onkeydown="ctrl_enter(event);"></textarea></p>
+<p><button id="paste_button">paste</button><br>
+<small>or hit ctrl+enter</small></p>
+</form>
+<div style="text-align: center; width: 100%">
+<p><small><a href="http://git.keentech.org/pastebucket">http://git.keentech.org/pastebucket</a></small></p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>paste bucket {{ pasteid }}</title>
+</head>
+<body>
+<p style="font-family: monospace"><a href="/">paste bucket</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="{{ '%s/%s'|format(url, pasteid) }}">{{ '%s/%s'|format(url_path, pasteid) }}</a>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ '%s/raw'|format(pasteid) }}">raw</a>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ '%s/edit'|format(pasteid) }}">edit</a></p>
+<hr>
+{{ paste|safe }}
+</body>
+</html>
